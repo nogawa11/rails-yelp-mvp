@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="mt-3">All Restaurants</h1>
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-trip">
+        <%= image_tag "https://loremflickr.com/320/240/#{restaurant.category}_restaurant"%>
+        <div class="card-trip-infos">
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.category %></p>
+        </div>
+        <%= link_to '', restaurant_path(restaurant), class: 'card-link'%>
+      </div>
+    <% end %>
+  </div>
+</div>

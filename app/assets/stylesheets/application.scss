@@ -1,0 +1,43 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+.area p {
+  margin: 0;
+  padding: 0;
+}
+
+.area {
+  margin: 16px;
+}
+
+.reviews h3 {
+  font-size: 20px;
+}
+
+.reviews-list {
+  margin: 16px
+}
+
+.bottom-links {
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+.bottom-links a {
+  margin-right: 16px;
+}
+
+a {
+  text-decoration: none
+}

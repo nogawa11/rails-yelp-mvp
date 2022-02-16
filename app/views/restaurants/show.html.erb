@@ -1,0 +1,38 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://loremflickr.com/1000/1000/restaurant)">
+  <%= @restaurant.name %>
+</div>
+
+<div class="container mt-4">
+  <h2><%= @restaurant.name %></h2>
+  <div class="area">
+    <p>Cuisine: <%= @restaurant.category %></p>
+    <p>Address:<%= @restaurant.address %></p>
+    <p>Phone Number:<%= @restaurant.phone_number %></p>
+  </div>
+
+  <div class="reviews border-top pt-3">
+    <% if @restaurant.reviews.any? %>
+      <h3>Reviews</h1>
+      <ul class="reviews-list list-unstyled">
+        <% @restaurant.reviews.each do |review| %>
+          <li>"<%= review.content %>"  <% review.rating.times do %>
+            <%= "<i class='fas fa-star'></i>".html_safe %>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <%= "<i class='far fa-star'></i>".html_safe %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="bottom-links border-top pt-3 d-flex">
+    <p><%= link_to(new_restaurant_review_path(@restaurant)) do %>
+      <i class="fas fa-plus"></i> Add a review
+    <% end %></p>
+    <p><%= link_to(restaurants_path) do %>
+      <i class="fas fa-undo"></i> Back
+    <% end %></p>
+  </div>
+</div>
